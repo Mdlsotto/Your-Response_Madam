@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Date Invitation</title>
+  <style>
+    body {
+      background-color: #000;
+      font-family: Arial, sans-serif;
+    }
+    
+    #box-message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #f0f0f0;
+      padding: 40px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      width: 500px;
+      text-align: center;
+      font-size: 24px;
+    }
+    
+    #no-button {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 24px;
+      padding: 10px 20px;
+    }
+    
+    #yes-button {
+      font-size: 24px;
+      padding: 10px 20px;
+    }
+    
+    .heart {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 40px;
+      height: 40px;
+    }
+    
+    .candle {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div id="box-message">
+    <img src="heart.png" class="heart">
+    <p>Do you want to go on a date?</p>
+    <button id="yes-button">Yes</button>
+    <button id="no-button">No</button>
+    <img src="candle.png" class="candle">
+  </div>
+
+  <script>
+    let noButton = document.getElementById("no-button");
+    let yesButton = document.getElementById("yes-button");
+
+    noButton.addEventListener("mouseover", () => {
+      noButton.style.top = Math.random() * 200 + "px";
+      noButton.style.left = Math.random() * 200 + "px";
+    });
+
+    yesButton.addEventListener("click", () => {
+      document.getElementById("box-message").innerHTML =
+        "I knew you'd say yes; let's have it on August 17. I will fill you in on the details soon.";
+    });
+  </script>
+</body>
+</html>
